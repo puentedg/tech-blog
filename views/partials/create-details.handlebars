@@ -1,0 +1,19 @@
+<div class="card mb-5">
+  <div class="card-header">
+    <p class="card-header-title header-style">
+      <a href="/post/{{id}}">{{title}}</a>
+    </p>
+  </div>
+  <div class="card-content">
+    <div class="content">
+      Event Time:
+      {{format_date date}}
+      <br />
+      Location:
+      {{location}}
+      <br />
+    </div>
+    <button class="button is-info btn-update" data-id="{{id}}">Edit</button>
+    <button class="button is-danger btn-delete" data-id="{{id}}">DELETE</button>
+  </div>
+</div>
