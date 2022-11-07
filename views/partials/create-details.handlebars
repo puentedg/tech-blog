@@ -1,3 +1,23 @@
+<div class="column is-6">
+  <form>
+    <h3 class="title header-style">Create New Event:</h3>
+    <div class="field">
+      <label class="label">Event Title:</label>
+      <div class="control">
+        <input class="input" type="text" id="title" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Date:</label>
+      <input class="input" type="datetime-local" id="date" name="date" />
+    </div>
+    <div class="field">
+      <label class="label">Description:</label>
+      <textarea class="textarea" id="description" rows="5"></textarea>
+    </div>
+    <button id="new-event" type="button" class="button is-link">Submit</button>
+  </form>
+</div>
 <div class="card mb-5">
   <div class="card-header">
     <p class="card-header-title header-style">
@@ -6,14 +26,12 @@
   </div>
   <div class="card-content">
     <div class="content">
-      Event Time:
       {{format_date date}}
       <br />
-      Location:
-      {{location}}
       <br />
     </div>
     <button class="button is-info btn-update" data-id="{{id}}">Edit</button>
     <button class="button is-danger btn-delete" data-id="{{id}}">DELETE</button>
   </div>
 </div>
+<script src="/js/createPost.js"></script>

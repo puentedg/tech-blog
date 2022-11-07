@@ -23,16 +23,13 @@
       {{#each posts as |post|}}
       {{> create-details}}
       {{/each}}
-      <script src="/js/my-event.js"></script>
+      <script src="/js/myPosts.js"></script>
       {{/if}}
       {{#if (equal query "2")}}
-      <h1 class="title header-style">Attending Events:</h1>
+      <h1 class="title header-style">Saved Posts:</h1>
       {{#each saved as |post|}}
       {{> post-details}}
       {{/each}}
-      {{/if}}
-      {{#if (equal query "3")}}
-      {{> new-event}}
       {{/if}}
       {{#if (equal query "4")}}
       {{> update-username}}
