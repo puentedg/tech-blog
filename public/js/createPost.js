@@ -5,17 +5,17 @@ document.getElementsByName("date")[0].min = today;
 const newPostHandler = async (post) => {
   const title = document.querySelector("#title").value.trim();
   const date = document.querySelector("#date").value.trim();
-  const description = document.querySelector("#description").value.trim();
-  if (title && date && description) {
-    const response = await fetch(`/api/post`, {
+  const content= document.querySelector("#content").value.trim();
+  if (title && date && content) {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
-      body: JSON.stringify({ title, date, description}),
+      body: JSON.stringify({ title, date, content}),
       headers: {
         "Content-Type": "application/json",
       },
     });
     if (response.ok) {
-      document.location.replace(`/dashboard?opt=1`);
+      document.location.replace(`/dashboard?opt=2`);
     } else {
       alert("Failed to create post");
       console.log(response);

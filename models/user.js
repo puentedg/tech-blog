@@ -36,12 +36,6 @@ User.init(
         is: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{10,}$/,
       },
     },
-
-    admin: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      default: false,
-    },
   },
   {
     hooks: {

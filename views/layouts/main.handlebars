@@ -20,38 +20,27 @@
     <div class="is-justify-content-space-between">
       <header class="is-flex justify-space-between is-align-items-center">
         <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="/img/TECH.png" width="112" height="50" />
-            </a>
-          </div>
           <div id="navbar" class="navbar-menu">
             <div class="navbar-start" id="navbar-content">
               <a
                 href="/"
-                class="navbar-item button is-primary is-rounded is-outlined"
+                class="navbar-item button is-warning is-rounded"
               >
                 Home
-              </a>
-              <a
-                href="/about"
-                class="navbar-item button is-primary is-rounded is-outlined"
-              >
-                About
               </a>
             </div>
             <div class="navbar-end" id="navbarend-content">
               <div class="navbar-item">
                 <div class="buttons">
                   {{#if logged_in}}
-                    <a href="/dashboard" class="button is-primary">
+                    <a href="/dashboard" class="button is-warning">
                       <strong>Dashboard</strong>
                     </a>
                     <a id="logout" class="button is-light">
                       <strong>Log out</strong>
                     </a>
                   {{else}}
-                    <a href="/login" class="button is-primary">
+                    <a href="/login" class="button is-warning">
                       <strong>Login</strong>
                     </a>
                   {{/if}}
