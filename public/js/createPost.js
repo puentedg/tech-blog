@@ -2,7 +2,9 @@ var today = new Date().toISOString().slice(0, 16);
 
 document.getElementsByName("date")[0].min = today;
 
-const newPostHandler = async (post) => {
+const postFormHandler = async (event) => {
+  vent.preventDefault();
+  
   const title = document.querySelector("#title").value.trim();
   const date = document.querySelector("#date").value.trim();
   const content= document.querySelector("#content").value.trim();
@@ -15,7 +17,7 @@ const newPostHandler = async (post) => {
       },
     });
     if (response.ok) {
-      document.location.replace(`/dashboard?opt=2`);
+      document.location.replace("/dashboard?opt=2");
     } else {
       alert("Failed to create post");
       console.log(response);
@@ -23,4 +25,6 @@ const newPostHandler = async (post) => {
   }
 };
 
-document.querySelector("#new-post").addEventListener("click", newPostHandler);
+document
+.querySelector("#new-post")
+.addEventListener("click", postFormHandler);

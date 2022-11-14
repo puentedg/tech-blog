@@ -1,83 +1,87 @@
-<div class="card mb-5">
-  <div class="card-header has-background-warning-light">
-    <p class="card-header-title">
-      <a href="/post/{{id}}">{{title}}</a>
-    </p>
-  </div>
-  <span class="float-end">
-  <div class="card-content has-background-primary-light">
-    <div class="content">
-       Posted
-          {{#if user}}
-            by
-            {{user.username}}
-          {{/if}}
-          on
-          {{format_date createdAt}}
-      </span>
-    </div>
-  </div>
-  </div>
-  {{#if logged_in}}
-  <article class="media">
-    <form class="media-content comment-form">
-      <div class="field">
-        <p class="control">
-          <textarea
-            id="commentContent"
-            class="textarea"
-            placeholder="Add a comment..."
-          ></textarea>
+<div class="columns">
+  <div class="column">
+    <div class="card mb-5">
+      <div class="card-header has-background-grey-dark has-text-white-ter">
+        <p class="card-header-title">
+          <a class="has-text-white-ter is-size-4" href="/post/{{id}}">{{title}}</a>
         </p>
       </div>
-      <button type="submit" class="button is-danger">Submit</button>
-    </form>
-  </article>
-  <script src="/js/comment.js"></script>
-{{else}}
-  <article class="media">
-    <div class="media-content">
-      <div class="field">
-        <p class="control">
-          <textarea
-            class="textarea"
-            placeholder="Please Login to leave a comment"
-            disabled
-          ></textarea>
-        </p>
-      </div>
-    </div>
-  </article>
-{{/if}}
-
-{{#each comments}}
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong>{{user.username}}</strong>
-          <br />
-          {{content}}
-        </p>
-      </div>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item">
-            <span class="icon is-small"><i class="fas fa-reply"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fas fa-heart"></i></span>
-          </a>
+      <span class="float-end">
+      <div class="card-content has-background-grey-light has-text-grey-darker">
+        <div class="content">
+          Posted
+              {{#if user}}
+                by
+                {{user.username}}
+              {{/if}}
+              on
+              {{format_date}}
+          </span>
         </div>
-      </nav>
+      </div>
+      </div>
+      {{#if logged_in}}
+      <article class="media">
+        <form class="media-content comment-form">
+          <div class="field">
+            <p class="control">
+              <textarea
+                id="commentContent"
+                class="textarea"
+                placeholder="Add a comment..."
+              ></textarea>
+            </p>
+          </div>
+          <button type="submit" class="button is-danger">Submit</button>
+        </form>
+      </article>
+      <script src="/js/comment.js"></script>
+    {{else}}
+      <article class="media">
+        <div class="media-content">
+          <div class="field">
+            <p class="control">
+              <textarea
+                class="textarea"
+                placeholder="Please Login to leave a comment"
+                disabled
+              ></textarea>
+            </p>
+          </div>
+        </div>
+      </article>
+    {{/if}}
+
+    {{#each comments}}
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{user.username}}</strong>
+              <br />
+              {{content}}
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-reply"></i></span>
+              </a>
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+              </a>
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-heart"></i></span>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="media-right">
+          <button class="delete"></button>
+        </div>
+      </article>
+    {{/each}}
     </div>
-    <div class="media-right">
-      <button class="delete"></button>
-    </div>
-  </article>
-{{/each}}
+  </div>
 </div>
 <script src="/js/comment.js"></script>

@@ -16,16 +16,17 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="container">
-    <div class="is-justify-content-space-between">
-      <header class="is-flex justify-space-between is-align-items-center">
+  <body class="container main">
+    {{!-- <div class="is-justify-content-space-between"> --}}
+      {{!-- <header class="is-flex justify-space-between is-align-items-center"> --}}
         <nav class="navbar" role="navigation" aria-label="main navigation">
+          {{!-- <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="/public/img/TECH (8).png" width="112" height="50" />
+            </a> --}}
           <div id="navbar" class="navbar-menu">
             <div class="navbar-start" id="navbar-content">
-              <a
-                href="/"
-                class="navbar-item button is-warning is-rounded"
-              >
+              <a href="/" class="navbar-item button is-warning is-rounded">
                 Home
               </a>
             </div>
@@ -49,7 +50,7 @@
             </div>
           </div>
         </nav>
-      </header>
+      {{!-- </header> --}}
     </div>
     <main>
       {{{body}}}

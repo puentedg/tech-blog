@@ -35,8 +35,11 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
     });
     const posts = postData.map((post) => post.get({ plain: true }));
+    const query = req.query.opt;
+console.log(query);
     res.render("dashboard", {
       posts,
+      query,
       currentId: req.session.user_id,
       currentUsername: req.session.username,
       logged_in: req.session.logged_in,
@@ -46,9 +49,9 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.get("/dashboard/edit-post", withAuth, (req, res) => {
+router.get("/dashboard/create-post", withAuth, (req, res) => {
   try {
-    res.render("", {
+    res.render("create-post", {
       currentId: req.session.user_id,
       currentUsername: req.session.username,
       logged_in: req.session.logged_in,
@@ -81,7 +84,7 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
-router.get("/update-post/:id", withAuth, async (req, res) => {
+router.get("/edit-post/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       where: {
@@ -89,7 +92,7 @@ router.get("/update-post/:id", withAuth, async (req, res) => {
       },
     });
     const post = postData.get({ plain: true });
-    res.render("update-post", {
+    res.render("edit-post", {
       ...post,
       currentId: req.session.user_id,
       currentUsername: req.session.username,

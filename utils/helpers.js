@@ -1,6 +1,7 @@
 module.exports = {
-    format_date: (date) => {
-      return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} ${date.toLocaleTimeString()}`;
+    format_date: () => {
+      let dt = new Date();
+      return `${dt.getFullYear()}/${dt.getMonth()}/${dt.getDate()} ${dt.toLocaleTimeString()}`;
     },
   
     equal: function (a, b) {
