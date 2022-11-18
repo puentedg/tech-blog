@@ -20,7 +20,7 @@
         </div>
       </div>
       </div>
-      {{#if logged_in}}
+      {{#unless logged_in}}
       <article class="media">
         <form class="media-content comment-form">
           <div class="field">
@@ -50,7 +50,7 @@
           </div>
         </div>
       </article>
-    {{/if}}
+    {{/unless}}
 
     {{#each comments}}
       <article class="media">
