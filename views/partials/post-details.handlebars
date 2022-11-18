@@ -9,13 +9,17 @@
       <span class="float-end">
       <div class="card-content has-background-grey-light has-text-grey-darker">
         <div class="content">
-          Posted
+          <b>Posted
               {{#if user}}
                 by
                 {{user.username}}
               {{/if}}
               on
               {{format_date}}
+              </b>
+              <div>
+                {{content}}
+              </div>
           </span>
         </div>
       </div>
